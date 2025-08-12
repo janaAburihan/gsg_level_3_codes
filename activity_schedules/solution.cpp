@@ -27,6 +27,9 @@ int main()
 {
     cin>>n;
     recur(0, {});
+    
+    int count = 3*pow(2,n-1);
+    cout<<"Count: "<< count;
 
     return 0;
 }
