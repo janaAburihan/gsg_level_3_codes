@@ -10,20 +10,13 @@ void recur(int x, vector<string> cur){
         return;
     }
   
-    if(!cur.size() || cur.back() != "Running"){
-        cur.push_back("Running");
-        recur(x+1, cur);
-        cur.pop_back();
-    }
-    if(!cur.size() || cur.back() != "Swimming"){
-        cur.push_back("Swimming");
-        recur(x+1, cur);
-        cur.pop_back();
-    }
-    if(!cur.size() || cur.back() != "Football"){
-        cur.push_back("Football");
-        recur(x+1, cur);
-        cur.pop_back();
+    string act[3] = {"Running", "Swimming", "Football"};
+    for (int i=0; i<3; i++){
+        if(!cur.size() || cur.back() != act[i]){
+            cur.push_back(act[i]);
+            recur(x+1, cur);
+            cur.pop_back();
+        }
     }
 }
 
